@@ -77,7 +77,7 @@ async function main() {
     data: {
       email: "superadmin@docyori.com",
       username: "globaladmin",
-      fullName: "DocYori Administrator",
+      fullName: "DocSmart Administrator",
       phone: "1111111111",
       passwordHash: defaultPassword,
       role: Role.SUPER_ADMIN,

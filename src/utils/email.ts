@@ -96,7 +96,7 @@ export const sendEmail = async (to: string, subject: string, html: string) => {
             });
 
             let fromEmail = process.env.SMTP_USER || 'no-reply@docyori.com';
-            let fromName = "Docyori";
+            let fromName = "DocSmart";
 
             if (setting) {
                 try {
@@ -190,7 +190,7 @@ export const sendAdminCongratulationsEmail = async (
         const emailBody = `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; line-height: 1.6;">
             <h2 style="color: #2c3e50;">Congratulations, ${ownerName}! Your Account has been Created</h2>
-            <p>We are excited to welcome you to Docyori! Your clinic administration account has been successfully created. Here are your account credentials and subscription plan details:</p>
+            <p>We are excited to welcome you to DocSmart! Your clinic administration account has been successfully created. Here are your account credentials and subscription plan details:</p>
             
             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #0d6efd;">
               <p style="margin-top: 0;"><strong>Your Login Credentials:</strong></p>
@@ -219,10 +219,10 @@ export const sendAdminCongratulationsEmail = async (
             <div style="text-align: center; margin: 30px 0;">
               <a href="${loginUrl}" style="background-color: #0d6efd; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Click here to Login</a>
             </div>
-            <p style="font-size: 13px; color: #6c757d;">Regards,<br/><strong>The Docyori Team</strong></p>
+            <p style="font-size: 13px; color: #6c757d;">Regards,<br/><strong>The DocSmart Team</strong></p>
           </div>`;
 
-        return await sendEmail(to.toLowerCase(), "Welcome to Docyori! Account & Plan Details", emailBody);
+        return await sendEmail(to.toLowerCase(), "Welcome to DocSmart! Account & Plan Details", emailBody);
     } catch (error) {
         console.error("Error sending admin congratulations email:", error);
         return false;
@@ -262,10 +262,10 @@ export const sendPatientRegistrationEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
-              <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Welcome to DocYori! 👋</h2>
+              <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Welcome to DocSmart! 👋</h2>
               
               <p style="color: #475569; font-size: 15px; line-height: 1.6; text-align: center; margin-top: 0; margin-bottom: 20px;">
                 Hello <strong>${patientName}</strong>,<br/>
@@ -352,7 +352,7 @@ export const sendPatientAppointmentEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Appointment Confirmed ✅</h2>
@@ -438,10 +438,10 @@ export const sendDoctorRegistrationEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
-              <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Welcome to DocYori! 🩺</h2>
+              <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Welcome to DocSmart! 🩺</h2>
               
               <p style="color: #475569; font-size: 15px; line-height: 1.6; text-align: center; margin-top: 0; margin-bottom: 20px;">
                 Hello <strong>Dr. ${doctorName}</strong>,<br/>
@@ -526,7 +526,7 @@ export const sendDoctorAppointmentEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">New Appointment Assigned</h2>
@@ -613,7 +613,7 @@ export const sendClinicWelcomeTrialEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Your Free Trial Has Started! 🚀</h2>
@@ -658,7 +658,7 @@ export const sendClinicWelcomeTrialEmail = async (
               </div>
               
               <div style="text-align: center; margin-bottom: 30px;">
-                <a href="${loginUrl}" style="background: #10b981; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; display: inline-block; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);">Explore DocYori!</a>
+                <a href="${loginUrl}" style="background: #10b981; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; display: inline-block; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);">Explore DocSmart!</a>
               </div>
               
               <hr style="border: none; border-top: 1px solid #f1f5f9; margin-bottom: 20px;" />
@@ -679,7 +679,7 @@ export const sendClinicWelcomeTrialEmail = async (
             </div>
         `;
 
-        return await sendEmail(to.toLowerCase(), "Welcome to DocYori! Free Trial Started", emailBody);
+        return await sendEmail(to.toLowerCase(), "Welcome to DocSmart! Free Trial Started", emailBody);
     } catch (error) {
         console.error("Error sending clinic trial email:", error);
         return false;
@@ -708,13 +708,13 @@ export const sendClinicSubscriptionActivatedEmail = async (
         const expiryString = expiresAt.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
         const titleText = isRenewal ? "Your Subscription Has Been Renewed" : "Subscription Activated!";
         const mainText = isRenewal 
-            ? "Your subscription has been successfully renewed. Thank you for continuing with DocYori."
+            ? "Your subscription has been successfully renewed. Thank you for continuing with DocSmart."
             : "Great! Your subscription has been successfully activated.";
 
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">${titleText} 🎉</h2>
@@ -793,13 +793,13 @@ export const sendClinicSubscriptionExpiredEmail = async (
 
         const titleText = isTrial ? "Your Free Trial Has Expired" : "Your Subscription Has Expired";
         const descriptionText = isTrial 
-            ? "Your free trial of DocYori has expired. Upgrade your account to continue using all features seamlessly."
+            ? "Your free trial of DocSmart has expired. Upgrade your account to continue using all features seamlessly."
             : `Your subscription for the "${planName}" plan has expired. Upgrade/renew your account now to avoid interruptions in managing your clinic.`;
 
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #ef4444; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">${titleText} ⚠️</h2>
@@ -858,13 +858,13 @@ export const sendClinicSubscriptionExpiringSoonEmail = async (
         const expiryString = expiresAt.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
         const titleText = `${daysLeft} Days Left in Your Free Trial`;
         const descriptionText = daysLeft <= 7 
-            ? `Your DocYori free trial will expire in ${daysLeft} days. Upgrade now to continue seamlessly.`
+            ? `Your DocSmart free trial will expire in ${daysLeft} days. Upgrade now to continue seamlessly.`
             : `Your subscription is expiring soon. Renew now to avoid any interruption in clinic services.`;
 
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #eab308; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">⏰ ${titleText}</h2>
@@ -939,7 +939,7 @@ export const sendClinicAppointmentNotificationEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
               <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">New Clinic Booking 📅</h2>
@@ -1023,10 +1023,10 @@ export const sendStaffWelcomeEmail = async (
         const emailBody = `
             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 24px; border: 1px solid #f0f0f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
               <div style="text-align: center; margin-bottom: 24px;">
-                <img src="cid:logo" alt="DocYori" style="height: 50px; width: auto; object-fit: contain;" />
+                <img src="cid:logo" alt="DocSmart" style="height: 50px; width: auto; object-fit: contain;" />
               </div>
               
-              <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Welcome to DocYori! 👋</h2>
+              <h2 style="color: #0f172a; text-align: center; font-size: 22px; font-weight: 800; margin-top: 0; margin-bottom: 8px;">Welcome to DocSmart! 👋</h2>
               
               <p style="color: #475569; font-size: 15px; line-height: 1.6; text-align: center; margin-top: 0; margin-bottom: 20px;">
                 Hello <strong>${staffName}</strong>,<br/>
@@ -1085,7 +1085,7 @@ export const sendStaffWelcomeEmail = async (
             </div>
         `;
 
-        return await sendEmail(to.toLowerCase(), "Welcome to DocYori! Your Staff Account Details", emailBody);
+        return await sendEmail(to.toLowerCase(), "Welcome to DocSmart! Your Staff Account Details", emailBody);
     } catch (error) {
         console.error("Error sending staff welcome email:", error);
         return false;

@@ -95,7 +95,18 @@ export const getLabBookings = async (req: AuthenticatedRequest, res: Response) =
             where: { clinicId },
             include: {
                 clinic: true,
-                patient: { select: { id: true, firstName: true, lastName: true, patientCode: true, phone: true } },
+                patient: {
+                    select: {
+                        id: true,
+                        firstName: true,
+                        lastName: true,
+                        patientCode: true,
+                        phone: true,
+                        email: true,
+                        gender: true,
+                        dateOfBirth: true,
+                    },
+                },
                 test: {
                     select: {
                         id: true, name: true, price: true, testCode: true,

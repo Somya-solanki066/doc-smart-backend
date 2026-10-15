@@ -837,7 +837,7 @@ export const requestPasswordReset = async (req: Request, res: Response) => {
       const msg = `<h3>Password Reset Requested</h3>
       <p>Your OTP is: <b>${otp}</b></p>
       <p>This OTP will expire in 10 minutes. Do not share it with anyone.</p>`;
-      await sendEmail(user.email, "Docyori - Password Reset OTP", msg);
+      await sendEmail(user.email, "DocSmart - Password Reset OTP", msg);
     }
 
     // In a real app we would integrate SMS API for phone here

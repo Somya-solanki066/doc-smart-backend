@@ -103,7 +103,22 @@ export const getPharmacyInvoices = async (req: AuthenticatedRequest, res: Respon
             where: { clinicId },
             include: { 
                 clinic: true,
-                patient: { select: { id: true, firstName: true, lastName: true, patientCode: true } },
+                patient: {
+                    select: {
+                        id: true,
+                        firstName: true,
+                        lastName: true,
+                        patientCode: true,
+                        phone: true,
+                        address1: true,
+                        address2: true,
+                        city: true,
+                        state: true,
+                        pincode: true,
+                        email: true,
+                        gender: true,
+                    },
+                },
                 items: {
                     include: {
                         medicine: true
@@ -129,7 +144,22 @@ export const getPharmacyInvoiceById = async (req: AuthenticatedRequest, res: Res
             where: { id, clinicId: clinicId! },
             include: {
                 clinic: true,
-                patient: { select: { id: true, firstName: true, lastName: true, patientCode: true, phone: true, address1: true } },
+                patient: {
+                    select: {
+                        id: true,
+                        firstName: true,
+                        lastName: true,
+                        patientCode: true,
+                        phone: true,
+                        address1: true,
+                        address2: true,
+                        city: true,
+                        state: true,
+                        pincode: true,
+                        email: true,
+                        gender: true,
+                    },
+                },
                 items: {
                     include: {
                         medicine: true
